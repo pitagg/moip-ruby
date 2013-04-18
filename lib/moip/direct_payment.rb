@@ -59,7 +59,7 @@ module MoIP
 
           # Identificador do tipo de instrução
           xml.EnviarInstrucao {
-            xml.InstrucaoUnica {
+            xml.InstrucaoUnica(TipoValidacao: "Transparente") {
 
               # Dados da transação
               xml.Razao {
