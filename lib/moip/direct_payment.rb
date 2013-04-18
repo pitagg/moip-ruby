@@ -171,6 +171,13 @@ module MoIP
                   xml.text attributes[:url_retorno]
                 }
               end
+              
+              if attributes[:url_notificacao]
+                # URL de retorno
+                xml.URLNotificacao {
+                  xml.text attributes[:url_notificacao]
+                }
+              end
                 
             }
           }
