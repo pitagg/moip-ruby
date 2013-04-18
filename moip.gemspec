@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name = %q{moip}
-  gem.version = "1.0.2"
+  gem.version = "1.0.3"
 
   gem.authors = ["Guilherme Nascimento"]
   gem.date = %q{2010-11-10}
