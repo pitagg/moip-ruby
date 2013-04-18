@@ -133,6 +133,7 @@ module MoIP
                 xml.Nome { xml.text attributes[:pagador][:nome] }
                 xml.LoginMoIP { xml.text attributes[:pagador][:login_moip] }
                 xml.Email { xml.text attributes[:pagador][:email] }
+                xml.IdPagador { xml.text attributes[:pagador][:id_pagador] }
                 xml.TelefoneCelular { xml.text attributes[:pagador][:tel_cel] }
                 xml.Apelido { xml.text attributes[:pagador][:apelido] }
                 xml.Identidade(:Tipo => "CPF") { xml.text attributes[:pagador][:identidade] }
