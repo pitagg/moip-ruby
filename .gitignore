@@ -24,3 +24,4 @@ lib/main.rb
 config.yaml
 config/
 config/*
+.rvmrc
