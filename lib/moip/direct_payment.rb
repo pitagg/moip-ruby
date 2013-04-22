@@ -56,9 +56,9 @@ module MoIP
                 xml.Valor(:moeda => "BRL") { xml.text attributes[:valor] }
               end
               xml.IdProprio { xml.text attributes[:id_proprio] }
-              # Definindo o pagamento direto
-              xml.PagamentoDireto do
-                if attributes[:forma].present?
+              # se informada a forma de pagamento, significa que o pagamento será direto.
+              if attributes[:forma].present?
+                xml.PagamentoDireto do
                   xml.Forma { xml.text attributes[:forma] }
                   # Débito Bancário
                   xml.Instituicao { xml.text attributes[:instituicao] } if ["DebitoBancario"].include?(attributes[:forma])
