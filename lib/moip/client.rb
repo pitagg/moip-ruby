@@ -2,11 +2,6 @@
 require 'httparty'
 
 module MoIP
-  class WebServerResponseError < StandardError ; end
-  class MissingConfigError < StandardError ; end
-  class MissingTokenError < StandardError ; end
-  class MissingKeyError < StandardError ; end
-
   class Client
     include HTTParty
 

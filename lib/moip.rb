@@ -17,6 +17,11 @@ module MoIP
   class InvalidPhone < ValidationError; end
   class InvalidReceiving < ValidationError; end
   class InvalidValue < ValidationError; end
+  
+  class WebServerResponseError < StandardError ; end
+  class MissingConfigError < StandardError ; end
+  class MissingTokenError < StandardError ; end
+  class MissingKeyError < StandardError ; end
 
   autoload :DirectPayment, 'moip/direct_payment'
   autoload :Client,        'moip/client'
