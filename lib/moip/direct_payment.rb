@@ -56,6 +56,22 @@ module MoIP
                 xml.Valor(:moeda => "BRL") { xml.text attributes[:valor] }
               end
               xml.IdProprio { xml.text attributes[:id_proprio] }
+              
+              #configuração de parcelamentos
+              #{parcelamentos: [{min: 2, max:5, repassar: true}, {min: 6, max:10, repassar: true}]}
+              if attributes[:parcelamentos] && attributes[:parcelamentos].is_a?(Array)
+                xml.Parcelamentos do
+                  attributes[:parcelamentos].each do |parcelamento|
+                    next unless parcelamento.is_a? Hash
+                    xml.Parcelamento do 
+                      xml.MinimoParcelas { xml.text parcelamento[:min] }
+                      xml.MaximoParcelas { xml.text parcelamento[:max] }
+                      xml.Repassar { xml.text parcelamento[:repassar] }
+                    end
+                  end
+                end
+              end
+              
               # se informada a forma de pagamento, significa que o pagamento será direto.
               if attributes[:forma].present?
                 xml.PagamentoDireto do
